@@ -100,8 +100,8 @@ watch(currentFilter, (newVal) => {
       <button ref="filterCompleted" @click="currentFilter = 'completed'">Completed</button>
       <button ref="filterUncompleted" @click="currentFilter = 'uncompleted'">Uncompleted</button>
     </div>
-    <div id="summary">
-      <h2 v-if="tasks.length > 0">{{ remainingTasks > 0 ? `Remaining Tasks : ${remainingTasks}` : "No Remaining Tasks" }}</h2>
+    <div id="summary" v-if="tasks.length > 0">
+      <h2>{{ remainingTasks > 0 ? `Remaining Tasks : ${remainingTasks}` : "No Remaining Tasks" }}</h2>
       <button @click="deleteCompletedTasks">Delete Completed Tasks</button>
     </div>
     <TaskInput :new-id="nextId" @add-task="onNewTask" />
